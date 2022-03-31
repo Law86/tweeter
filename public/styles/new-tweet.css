@@ -21,8 +21,6 @@
 .submit-count {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .new-tweet-text {
@@ -40,7 +38,6 @@
   border-bottom: 2px solid rgba(0, 0, 0, 0.822);
   background: transparent;
   padding-bottom: 10px;
-  width: 500px;
 }
 
 .posted-tweet-buttons {
@@ -77,9 +74,11 @@
 }
 
 article.tweet {
-  display: flex;
-  padding: 40px;
   box-shadow: 1px;
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 article.tweet:hover {
@@ -88,4 +87,24 @@ article.tweet:hover {
 
 .tweet-time {
   font-size: 15px;
+}
+
+.post-tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post.user.avatar {
+  display: flex;
+  justify-content: left;
+}
+
+.post.user.name {
+  display: flex;
+  justify-content: left;
+}
+
+.post-user-handle {
+  display: flex;
+  justify-content: right;
 }

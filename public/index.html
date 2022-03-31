@@ -45,10 +45,10 @@
      <header>
        <div class="profile">
          <div>
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/male.png" width="225" height="225"> 
       </div>
       <div>
-          <h2>Brynn Briar</h2>
+          <h2>Mike Law</h2>
       </div>
     </div>
   </header>
@@ -57,39 +57,18 @@
     <!-- Main Tweet Container -->
     <main class="container">
       <section class="all-tweets">
-        <form method="post" action="/tweets"></form>
-        <form class="new-tweet-form">
-          <label for="new-tweet-text">What are you humming about?</label>
+        <form class="new-tweet-form" method="post">
+          <label for="tweet-text">What are you humming about?</label>
           <br>
-          <textarea class="new-tweet-text" placeholder="......."></textarea>
+          <textarea class="new-tweet-text" id="tweet-text" placeholder="" name="text"></textarea>
           <div class="submit-count">
             <button class="submit-button" type="submit" >Tweet</button>
             <output class="form-count" for="new-tweet-text">140</output>
           </div>
         </form>
          <!-- Archieved Tweet Container -->
-        <main class="alltweet-container">
+        <main class="tweets-container">
           
-          <article class="tweet">
-            <form method="post" action="/all-tweets" class="allTweetForm"></form>
-            <form>
-                           
-              
-              <img class="avatar" src="images/steelers.png" alt="profile-picture" width="30" height="30">
-              <label for="all-text">Mike Law</label>
-
-              <br>
-              <textarea class="posted-tweet-text" placeholder="This is an example of text for posted tweets"></textarea>
-              </header>
-              <footer class="submit-count">
-                <output class="tweet-time" for="tweet-text">2 Minutes Ago</output>
-                <div class="posted-tweet-buttons">
-                  <i class="fa-solid fa-flag"></i>
-                  <i class="fa-solid fa-retweet"></i>
-                  <i class="fa-solid fa-heart"></i>
-                </div>
-              </div>
-            </form>
           
         </main>
 
