@@ -3,7 +3,7 @@ nav {
   top: 0;
   width: 100%;
   height: 120px;
-  background: transparent;
+  background: #322aa7;
   color: #ffffff;
   padding: 1.5em 1.5em;
   justify-content: space-between;
@@ -34,4 +34,25 @@ nav {
 
 .writeNew {
   font-weight: 300;
+}
+
+/* Animated Nav Arrows */
+.arrow {
+  transform: translate(-50%, -50%);
+}
+.arrow span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-bottom: 5px solid #ff0606;
+  border-right: 5px solid #ff0606;
+  transform: rotate(45deg);
+  margin: -10px;
+  animation: animate 2s infinite;
+}
+.arrow span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+.arrow span:nth-child(3) {
+  animation-delay: -0.4s;
 }

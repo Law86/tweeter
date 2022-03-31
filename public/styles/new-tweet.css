@@ -4,8 +4,7 @@
   flex-direction: column;
   margin-top: 20px;
   padding-top: 20px;
-  width: 25em;
-  background-color: #faead1d7;
+  background-color: transparent;
 }
 
 .new-tweet-form {
@@ -14,7 +13,7 @@
   flex-direction: column;
   padding-top: 20px;
   width: 20em;
-  background-color: #faead1d7;
+  background-color: transparent;
   padding-bottom: 30px;
 }
 
@@ -107,4 +106,16 @@ article.tweet:hover {
 .post-user-handle {
   display: flex;
   justify-content: right;
+}
+
+.fa-flag:hover {
+  color: #1100ff;
+}
+
+.fa-retweet:hover {
+  color: #73ff00;
+}
+
+.fa-heart:hover {
+  color: #ff0000;
 }

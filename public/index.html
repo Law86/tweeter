@@ -21,42 +21,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- External JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="nav">
       <span class="navLogo">tweeter</span>
       
       <div class="write">
 
           <span class="writeNew">Write a new tweet</span>
-         
-          <i class="navArrows fas fa-angle-double-down"></i>
+          <br>
+          <div class="arrow">
+                <span></span>
+                <span></span>
+          </div>
+
         </a>
       </div>
     </nav>
 
-     <header>
-       <div class="profile">
-         <div>
-          <img src="/images/male.png" width="225" height="225"> 
+     <header class="header">
+       <div>
+          <img class="profile-pic" src="/images/male.png" width="225" height="225"> 
       </div>
       <div>
           <h2>Mike Law</h2>
       </div>
-    </div>
   </header>
   
 
     <!-- Main Tweet Container -->
     <main class="container">
-      <section class="all-tweets">
+      <section class="error-message">
+      </section>
+        </span>
         <form class="new-tweet-form" method="post">
           <label for="tweet-text">What are you humming about?</label>
           <br>

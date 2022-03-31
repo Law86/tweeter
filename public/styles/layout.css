@@ -18,7 +18,7 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #ffeed4;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -30,11 +30,10 @@ body {
 .container {
   width: 100%;
   display: flex;
-  padding-top: 10px;
-  padding-bottom: 10px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: auto;
 }
 
 .tweets-container {
@@ -43,4 +42,53 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+/* Mobile/Tablet*/
+@media only screen and (max-width: 1024px) {
+  .profile {
+    width: 100%;
+  }
+
+  .nav {
+    background: none;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 1025px) {
+  .header {
+    display: inline-block;
+    width: 40%;
+    align-items: left;
+    margin: 200px 0px 200px 50px;
+    background: none;
+  }
+
+  .container {
+    float: right;
+    margin-top: -780px;
+    display: inline-block;
+    width: 50vw;
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-10px, -10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
 }
