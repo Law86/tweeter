@@ -1,58 +1,72 @@
+/* Style properties pertaining to the nav bar */
+
 nav {
   position: fixed;
   top: 0;
   width: 100%;
   height: 120px;
-  background: #322aa7;
+  background: rgb(17, 17, 148);
   color: #ffffff;
   padding: 1.5em 1.5em;
   justify-content: space-between;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  font-family: "Bungee", cursive;
+  font-family: 'Source Sans Pro';
 }
 
-.navArrows {
-  display: flex;
-  color: #b31818;
-}
-
-.navLogo {
+.nav--logo {
   display: flex;
   align-items: left;
   margin-left: 1.5em;
   color: #ffffff;
+  font-family: "Bungee", cursive;
 }
 
-.write {
-  display: flex;
+.write--logo {
+  display: inline-flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: right;
   margin-right: 1.5em;
 }
 
-.writeNew {
-  font-weight: 300;
+.text-button-borderless {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 100;
 }
 
-/* Animated Nav Arrows */
-.arrow {
-  transform: translate(-50%, -50%);
+.write--bold {
+  font-weight: 600;
 }
-.arrow span {
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-bottom: 5px solid #ff0606;
-  border-right: 5px solid #ff0606;
-  transform: rotate(45deg);
-  margin: -10px;
-  animation: animate 2s infinite;
+
+/* Style properties pertaining to the animated arrows */
+
+.fa-angle-double-down {
+  font-size: 1em;
+  color: #f13c20;
+  margin-top: 0.2em;
+  animation: float 2s infinite;
 }
-.arrow span:nth-child(2) {
-  animation-delay: -0.2s;
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.5rem);
+    -webkit-transform: translateY(0.5rem);
+  }
+
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
 }
-.arrow span:nth-child(3) {
-  animation-delay: -0.4s;
+
+.arrow-center {
+  display: flex;
+  justify-content: center;
 }

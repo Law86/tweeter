@@ -4,64 +4,42 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const { render } = require("express/lib/response");
-
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
+// Function handling the creation of new tweets upon forum submit
 
 const createTweetElement = function (tweet) {
   let $tweet = `
 <article class="tweet">  
-<header class="post-tweet-header">       
-<img class="post-user-avatar" src="${
+  <header class="post-tweet-header">       
+    <div class="avatar--user">
+    <img class="post-user-avatar" src="${
     tweet.user.avatars
-  }" width="30" height="30">
-<div class="post-user-name">${tweet.user.name}</div>
-<div class="post-user-handle">${tweet.user.handle}</div>
-</header>
-<div>
+    }" width="30" height="30">
+    <h2 class="post-user-name">${tweet.user.name}</h2>
+    </div>
+    <p class="post-user-handle">${tweet.user.handle}</p>
+  </header>
+<body class="posted-tweet-text">
 ${$("<p>").addClass("posted-tweet-text").text(tweet.content.text).html()}
 <!-- <p class="posted-tweet-text">
 ${tweet.content.text}
 </p> -->
-</div>
+<hr>
+</body>
 <footer class="submit-count">
-  <output class="tweet-time" for="tweet-text">"${timeago.format(
-    tweet.created_at
-  )}"</output>
+  <output class="tweet-time" for="tweet-text">"${timeago.format(tweet.created_at)}"</output>
   <span class="posted-tweet-buttons">
   <i class="fas fa-flag"></i>
   <i class="fas fa-retweet"></i>
   <i class="fas fa-heart"></i>
   </span>
 </div>
-</form>
+</footer>
 </article>
 `;
   return $tweet;
 };
+
+// Function handling AJAX request
 
 const renderTweets = function (tweets) {
   tweets.forEach((element) => {
@@ -81,6 +59,9 @@ let loadTweets = () => {
     .catch();
 };
 
+// Function handling the submission process (GET/POST) and error handling for the new tweet form within
+// the document.ready function
+
 $(document).ready(function () {
   $(".new-tweet-form").on("submit", function (event) {
     event.preventDefault();
@@ -88,19 +69,26 @@ $(document).ready(function () {
     if ($(".new-tweet-text").val().length > 140) {
       return $(".error-message")
         .html(
-          "<i class='fa-solid fa-exclamation'></i> Error! Your tweet is too long! "
+          "<i class='fa-solid fa-exclamation'></i> Error! Tweet is too long! <i class='fa-solid fa-exclamation'>"
         )
         .slideDown();
     } else {
-      $.post("/tweets", data, function () {
-        $("textarea").val("");
-        $.get("/tweets", (serverResponse) => {
-          console.log(serverResponse);
-          const recentTweet = serverResponse.slice(-1);
-          renderTweets(recentTweet);
+      if ($(".new-tweet-text").val().length === 0) {
+        return $(".error-message")
+          .html(
+            "<i class='fa-solid fa-exclamation'></i> Error! Tweet cannot be empty! <i class='fa-solid fa-exclamation'> "
+          )
+          .slideDown();
+      } else {
+        $.post("/tweets", data, function () {
+          $("textarea").val("");
+          $.get("/tweets", (serverResponse) => {
+            console.log(serverResponse);
+            const recentTweet = serverResponse.slice(-1);
+            renderTweets(recentTweet);
+          });
         });
-      });
-
+      }
       $(".error-message").html("");
     }
   });
