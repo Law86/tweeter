@@ -21,3 +21,9 @@ This repository is the starter code for the project: Students will fork and clon
 - Body-parser
 - Chance
 - Timeago
+
+## Screenshots
+
+!["Screenshot of Desktop Mode"](https://github.com/Law86/tweeter/blob/master/docs/desktop-shot.png)
+!["Screenshot of Mobile Mode"](https://github.com/Law86/tweeter/blob/master/docs/mobile-shot.png)
+!["Screenshot of an Individual Tweet"](https://github.com/Law86/tweeter/blob/master/docs/tweet-shot.png)
